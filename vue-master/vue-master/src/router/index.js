@@ -4,8 +4,8 @@ Vue.use(Router)
 import login from '@/components/login'
 import home from '@/components/home'
 import NotFound from '@/components/404.vue';
-import goodslist from '@/components/nav1/goodslist'
-import goodsclass from '@/components/nav1/goodsclass'
+import Goodslist from '@/components/nav1/Goodslist'
+import Goodsclass from '@/components/nav1/Goodsclass'
 import Changepass from '@/components/nav2/Changepass'
 import personData from  '@/components/nav2/personData'
 import Transaction from '@/components/nav3/Transaction'
@@ -35,12 +35,12 @@ export default new Router({
         {
           path: '/goodslist',
           name: '商品列表',
-          component: goodslist
+          component: Goodslist
         },
         {
           path: '/goodsclass',
           name: '商品分类',
-          component: goodsclass
+          component: Goodsclass
         }
       ]
     },{

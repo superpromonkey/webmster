@@ -9,7 +9,6 @@ var multer=require('multer');
 var upload = multer({ dest: 'public/uploads/' }); 
 var session=require("express-session");
  app.use(session({'secret':'wy'}));
-var imgCode=require('./modules/imgCode');
 var md5=require('./modules/md5');
 var bodyParser=require('body-parser');
 var urlencode=bodyParser.urlencoded();
@@ -18,27 +17,6 @@ app.use(function (req, res, next) {
     next();
 });
 
-
-//请求验证码
-app.get('/getCode',(request,response)=>{
-    response.writeHead(200,{
-        'content-type':'text/html;charset=utf-8',
-        'Access-Control-Allow-Origin':'*'
-    });
-   var svg=imgCode(request,response);
-   request.session.code=svg[1];
-   response.end(JSON.stringify(svg));
-   
-});
-//验证码是否正确
-app.post('/defCode',urlencode,(request,response)=>{
-    response.writeHead(200,{
-        'content-type':'text/html;charset=utf-8',
-        'Access-Control-Allow-Origin':'*',
-        "Access-Control-Allow-Credentials": "true"    
-    });
-    request.body.trueCode==request.session.code ?  response.end('true') :  response.end('false');
-});
 //验证用户名密码是否正确
 app.get('/login',(request,response)=>{
     response.writeHead(200,{

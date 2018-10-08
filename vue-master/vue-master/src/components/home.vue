@@ -1,6 +1,6 @@
 <template>
 	<el-row class="container">
-		<el-col :span="24" class="header">
+		<el-col :span="24" class="header" width="100%">
 			<el-header style="height: 100px; font-size: 12px;margin: 0 20px;">
 				<el-container>
 					<el-aside width="500px">
@@ -79,7 +79,7 @@ export default {
     props:['name','password'],
     data(){
         return {
-            url:'api',
+            url:'api',//请求数据的地址
             user:this.name,
             pwd:this.password,
             mastershow:false, 
@@ -120,6 +120,11 @@ export default {
     created(){
 		this.mastershow();
 		
+	},
+	mounted() {
+		 this.$router.push({
+                      name: '商品列表', 
+                    }) 
 	}
 	
 

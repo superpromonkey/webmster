@@ -6,13 +6,14 @@ const path = require('path')
 
 module.exports = {
   dev: {
-
-    // Paths
+    // 配置跨域访问
+   
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
       '/api':{
-        target: 'http://10.137.37:7777', //后端数据端口
+        //target: 'http://10.3.137.37:7777', //后端数据端口
+        target: 'http://192.168.0.107:7777', //后端数据端口
         changeOrigin:'true',
         pathRewrite: {'^/api' : ''}
       }

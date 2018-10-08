@@ -238,12 +238,12 @@ export default {
         },
          open2() {
                     this.$message({
-                    message: '恭喜你，修改成功',
+                    message: '修改成功',
                     type: 'success'
                     });
         },
         open() {
-        this.$alert('你确定要删除么', '注意', {
+        this.$alert('你确定要删除码！！！', '注意', {
             confirmButtonText: '确定',
             callback: action => {
                 this.$message({
@@ -256,7 +256,7 @@ export default {
             });
          },
         open3() {
-        this.$message.error('错了哦，保证您的内容均不为空');
+        this.$message.error('输入有误，保证您的内容均不为空');
         },
         open6() {
         this.$message({
